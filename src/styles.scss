@@ -1,0 +1,50 @@
+// always include only once per project
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './theme';
+
+
+$app-teal: (
+  50: #ecf8f9,
+  100: #d8f2f3,
+  200: #b2e4e6,
+  300: #8bd7da,
+  400: #65cacd,
+  500: #3fbbc0,
+  600: #38a9ad,
+  700: #2c8487,
+  800: #257174,
+  900: #1f5e60,
+  A100: #a7ffeb,
+  A200: #64ffda,
+  A400: #1de9b6,
+  A700: #00bfa5,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$app-primary: mat-palette($app-teal, 500, 300, 900);
+$app-accent: mat-palette($mat-gray);
+$app-warn: mat-palette($mat-orange, 600);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
